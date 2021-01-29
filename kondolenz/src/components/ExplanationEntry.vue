@@ -1,7 +1,7 @@
 <template>
   <div class="entry wrapper">
     <h1 class="entry title">{{title}}</h1>
-    <button class="entry button">{{button_title}}</button>
+    <button class="entry button" @click="redirect_to_new_entry">{{button_title}}</button>
     <h1 class="entry text">{{text}}</h1>
   </div>
 </template>
@@ -13,7 +13,12 @@ export default {
     title: 'Explaining the world',
     button_title: 'Add entry',
     text: 'I don\'t know what to say'
-  })
+  }),
+  methods: {
+    redirect_to_new_entry: function () {
+      window.location.href = '/#/add/'
+    }
+  }
 }
 </script>
 

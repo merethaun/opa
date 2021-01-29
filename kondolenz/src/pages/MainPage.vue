@@ -3,6 +3,7 @@
     <Header />
     <div class="entries">
       <!-- maybe a picture ? if yes: after explanation ? -->
+      <img :src="images.main">
       <ExplanationEntry />
       <DisplayEntry
         v-for="entry in entries"
@@ -27,6 +28,13 @@ export default {
     DisplayEntry,
     ExplanationEntry
   },
+  data () {
+    return {
+      images: {
+        main: require('@/assets/IMG_20170722_101059.jpg')
+      }
+    }
+  },
   computed: {
     entries: function () {
       // entry: title, author, text, photos (email)
@@ -49,5 +57,8 @@ export default {
   }
   .entry {
     position: relative;
+  }
+  img {
+    width: 100%;
   }
 </style>
