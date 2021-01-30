@@ -58,8 +58,10 @@ export default {
     /* TODO?? border-right: var(--yellow) thick solid;*/
   }
   .entry.font.text {
-    margin: 10px 5px;
-    margin-right: 20px;
+    margin: 10px 30px;
+    margin-right: 50px;
+    text-align: justify;
+    word-wrap: normal;
   }
   .entry.font.author {
     font-size: small;
@@ -98,7 +100,7 @@ export default {
     width: fill-available;
     background: var(--dark-grey);
     padding: 10px 10px;
-    margin: 10px 0;
+    margin: 20px 0 10px;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   }
   .entry.imagewrapper>div {
@@ -106,7 +108,6 @@ export default {
     overflow: auto;
     display: flex;
     width: fill-available;
-    justify-content: space-around;
     padding: 15px 0;
   }
   .entry.imagewrapper>div::-webkit-scrollbar {

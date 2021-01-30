@@ -14,7 +14,7 @@
         >
       </div>
     </div>
-    <h1 class="entry font text">{{ text }}</h1>
+    <p class="entry font text">{{ text }}</p>
   </div>
 </template>
 

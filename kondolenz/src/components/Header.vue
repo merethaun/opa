@@ -31,7 +31,7 @@ export default {
     font-weight: 500;
     font-size: x-large;
     margin: 4px -2vw;
-    padding: 7px 20px 7px 7vw;
+    padding: 7px 20px 7px 10vw;
     width: fit-content;
     background: var(--yellow);
     color: var(--dark-grey);
