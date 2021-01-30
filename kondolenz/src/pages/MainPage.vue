@@ -10,6 +10,8 @@
         :text="entry.text"
         :title="entry.title"
         :author="entry.author"
+        :id="entry.id"
+        :imgs="entry.imgs"
       />
     </div>
   </div>

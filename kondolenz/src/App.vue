@@ -37,7 +37,7 @@ export default {
     height: fit-content;
     margin: 5vh 4vw;
     width: -webkit-fill-available;
-    padding: 10px 20px;
+    padding: 10px 0;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   }
   .entry.font {
@@ -49,11 +49,12 @@ export default {
   }
   .entry.font.title {
     font-size: large;
-    margin: 4px -20px;
+    margin: 5px 0;
     padding: 7px 25px 7px 50px;
     width: fit-content;
     background: var(--dark-grey);
     color: var(--yellow);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
     /* TODO?? border-right: var(--yellow) thick solid;*/
   }
   .entry.font.text {
@@ -62,7 +63,7 @@ export default {
   }
   .entry.font.author {
     font-size: small;
-    padding: 0 0 0 30px;
+    padding: 0 0 0 20px;
   }
   .entry.font.button {
     padding: 7px 10px;
@@ -74,6 +75,7 @@ export default {
     margin: 5px 0 5px 30px;
     outline: none;
     cursor: pointer;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   }
   .entry.font.button.cancel {
     background: var(--grey);
@@ -90,5 +92,40 @@ export default {
     font-size: x-small;
     padding: 0 0 0 30px;
     color: var(--grey)
+  }
+  .entry.imagewrapper {
+    height: 250px;
+    width: fill-available;
+    background: var(--dark-grey);
+    padding: 10px 10px;
+    margin: 10px 0;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  }
+  .entry.imagewrapper>div {
+    height: fill-available;
+    overflow: auto;
+    display: flex;
+    width: fill-available;
+    justify-content: space-around;
+    padding: 15px 0;
+  }
+  .entry.imagewrapper>div::-webkit-scrollbar {
+    height: 10px;
+    margin-top: 5px;
+  }
+  .entry.imagewrapper>div::-webkit-scrollbar-thumb {
+    background: rgb(95, 95, 95);
+    border-radius: 4px;
+  }
+  .entry.imagewrapper>div::-webkit-scrollbar-thumb:hover {
+    background: rgb(110, 110, 110);
+  }
+  .entry.image {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    margin: 0 5px;
+  }
+  .entry.titlewrapper {
+    display: flex;
+    align-items: baseline;
   }
 </style>

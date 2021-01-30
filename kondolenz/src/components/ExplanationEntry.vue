@@ -11,8 +11,8 @@ export default {
   name: 'ExplanationEntry',
   data: () => ({
     title: 'Explaining the world',
-    button_title: 'Add entry',
-    description: 'Beschreibung'
+    button_title: 'Eigene Kondulenz schreiben',
+    description: 'Schreibt mit'
   }),
   methods: {
     redirect_to_new_entry: function () {
