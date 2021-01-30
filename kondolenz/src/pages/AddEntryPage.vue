@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="mainwrapper">
     <Header />
     <NewEntry />
   </div>
@@ -17,16 +17,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  .wrapper {
-    background: white;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-  }
-</style>

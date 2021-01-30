@@ -1,9 +1,8 @@
 <template>
-  <div class="wrapper">
+  <div class="mainwrapper">
     <Header />
-    <div class="entries">
-      <!-- maybe a picture ? if yes: after explanation ? -->
-      <img :src="images.main">
+    <div class="entrieswrapper">
+      <img class="mainimage" :src="images.main">
       <ExplanationEntry />
       <DisplayEntry
         v-for="entry in entries"
@@ -31,7 +30,7 @@ export default {
   data () {
     return {
       images: {
-        main: require('@/assets/IMG_20170722_101059.jpg')
+        main: require('@/assets/IMG_20170722_135316.jpg')
       }
     }
   },
@@ -44,21 +43,11 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  .wrapper {
-    background: white;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  .entry {
+<style>
+  .entrieswrapper {
     position: relative;
   }
-  img {
+  .mainimage {
     width: 100%;
   }
 </style>
