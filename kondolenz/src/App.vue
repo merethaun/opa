@@ -12,9 +12,10 @@ export default {
 
 <style>
   :root {
+    --light-yellow: #fd9c00;
     --yellow: #ec8f14;
     --grey: #979797;
-    --dark-grey: #494949;
+    --dark-grey: #3a3a3a;
     font-family: Verdana;
     font-weight: 100;
     font-size: large;
@@ -27,7 +28,7 @@ export default {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.2;
+    opacity: 0.15;
   }
   .mainwrapper {
     background: var(--grey);
@@ -48,7 +49,7 @@ export default {
     margin: 5vh 4vw;
     width: -webkit-fill-available;
     padding: 10px 0;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
   }
   .entry.font {
     padding: 0;
@@ -60,7 +61,7 @@ export default {
   .entry.font.title {
     font-size: large;
     margin: 5px 0;
-    padding: 7px 25px 7px 50px;
+    padding: 7px 25px 7px 40px;
     width: fit-content;
     background: var(--dark-grey);
     color: var(--yellow);
@@ -68,8 +69,8 @@ export default {
     /* TODO?? border-right: var(--yellow) thick solid;*/
   }
   .entry.font.text {
-    margin: 10px 30px;
-    margin-right: 50px;
+    margin: 10px 40px;
+    margin-right: 60px;
     text-align: justify;
     word-wrap: normal;
   }
@@ -84,7 +85,7 @@ export default {
     border: none;
     box-shadow: none;
     color: white;
-    margin: 5px 0 5px 30px;
+    margin: 5px 0 5px 40px;
     outline: none;
     cursor: pointer;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
@@ -97,12 +98,12 @@ export default {
     filter: brightness(90%);
   }
   .entry.font.description {
-    margin: 5px 0;
+    margin: 5px 40px;
   }
   .entry.font.notice {
     margin: 2px 0;
-    font-size: x-small;
-    padding: 0 0 0 30px;
+    font-size: small;
+    padding: 0 0 0 40px;
     color: var(--grey)
   }
   .entry.imagewrapper {
@@ -118,7 +119,7 @@ export default {
     overflow: auto;
     display: flex;
     width: fill-available;
-    padding: 15px 0;
+    padding: 7px 0;
   }
   .entry.imagewrapper>div::-webkit-scrollbar {
     height: 10px;
@@ -138,5 +139,17 @@ export default {
   .entry.titlewrapper {
     display: flex;
     align-items: baseline;
+  }
+  .entry.formwrapper {
+    padding: 5px 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  .entry.formwrapper.row {
+    padding: 5px 0;
+    flex-direction: row;
+  }
+  .entry.font.label {
+    width: 125px;
   }
 </style>

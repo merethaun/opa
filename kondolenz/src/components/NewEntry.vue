@@ -1,8 +1,20 @@
 <template>
   <div class="entry wrapper">
     <h1 class="entry font title">{{title}}</h1>
-    <input type="text" class="entry font description" v-model="author">
-    <input type="text" class="entry font description" v-model="text">
+    <div class="entry formwrapper">
+      <div class="entry formwrapper row">
+        <label class="entry font label">{{ author_label }}</label>
+        <input type="text" class="entry font input" v-model="author">
+      </div>
+      <div class="entry formwrapper row">
+        <label class="entry font label">{{ email_label }}</label>
+        <input type="text" class="entry font input" v-model="email">
+      </div>
+      <div class="entry formwrapper row">
+        <label class="entry font label">{{ text_label }}</label>
+        <textarea type="text" class="entry font input multiline" v-model="text"></textarea>
+      </div>
+    </div>
     <div>
       <button class="entry font button" @click="save">{{ button_send }}</button>
       <button class="entry font button cancel" @click="cancel">{{ button_cancel }}</button>
@@ -23,6 +35,9 @@ export default {
       img: [],
       button_send: 'Kondolenz absenden',
       button_cancel: 'Abbrechen',
+      author_label: 'Name',
+      text_label: 'Dein Text',
+      email_label: 'E-Mail',
       notice: '⚠ Das von Ihnen geschriebene wird veröffentlicht'
     }
   },
