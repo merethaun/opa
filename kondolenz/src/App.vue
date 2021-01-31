@@ -13,11 +13,21 @@ export default {
 <style>
   :root {
     --yellow: #ec8f14;
-    --grey: #959595;
+    --grey: #979797;
     --dark-grey: #494949;
-    font-family: 'Verdana';
+    font-family: Verdana;
     font-weight: 100;
     font-size: large;
+  }
+  .mainwrapper::before {
+    content: "";
+    background-image: url('~@/assets/paper_texture.jpg');
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.2;
   }
   .mainwrapper {
     background: var(--grey);
