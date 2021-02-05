@@ -15,7 +15,7 @@ export default {
     --light-yellow: #fd9c00;
     --yellow: #ec8f14;
     --grey: #979797;
-    --dark-grey: #3a3a3a;
+    --dark-grey: #2f2f2f;
     font-family: Verdana;
     font-weight: 100;
     font-size: large;
@@ -28,7 +28,7 @@ export default {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.15;
+    opacity: 0.1;
   }
   .mainwrapper {
     background: var(--grey);
@@ -46,7 +46,7 @@ export default {
     flex-direction: column;
     position: relative;
     height: fit-content;
-    margin: 5vh 4vw;
+    margin: 5vh 15vw;
     width: -webkit-fill-available;
     padding: 10px 0;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
@@ -57,11 +57,13 @@ export default {
     font-weight: 100;
     font-size: medium;
     width: fit-content;
+    text-align: justify;
+    word-wrap: normal;
   }
   .entry.font.title {
     font-size: large;
     margin: 5px 0;
-    padding: 7px 25px 7px 40px;
+    padding: 7px 25px 7px 55px;
     width: fit-content;
     background: var(--dark-grey);
     color: var(--yellow);
@@ -69,10 +71,8 @@ export default {
     /* TODO?? border-right: var(--yellow) thick solid;*/
   }
   .entry.font.text {
-    margin: 10px 40px;
-    margin-right: 60px;
-    text-align: justify;
-    word-wrap: normal;
+    margin: 10px 55px;
+    margin-right: 75px;
   }
   .entry.font.author {
     font-size: small;
@@ -85,7 +85,7 @@ export default {
     border: none;
     box-shadow: none;
     color: white;
-    margin: 5px 0 5px 40px;
+    margin: 5px 0 5px 55px;
     outline: none;
     cursor: pointer;
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
@@ -98,12 +98,12 @@ export default {
     filter: brightness(90%);
   }
   .entry.font.description {
-    margin: 5px 40px;
+    margin: 5px 75px 15px 55px;
   }
   .entry.font.notice {
     margin: 2px 0;
     font-size: small;
-    padding: 0 0 0 40px;
+    padding: 0 75px 0 55px;
     color: var(--grey)
   }
   .entry.imagewrapper {
@@ -132,6 +132,9 @@ export default {
   .entry.imagewrapper>div::-webkit-scrollbar-thumb:hover {
     background: rgb(110, 110, 110);
   }
+  .entry.imagewrapper>div::-webkit-scrollbar-thumb:active {
+    background: rgb(110, 110, 110);
+  }
   .entry.image {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     margin: 0 5px;
@@ -140,16 +143,30 @@ export default {
     display: flex;
     align-items: baseline;
   }
-  .entry.formwrapper {
-    padding: 5px 40px;
-    display: flex;
-    flex-direction: column;
+
+  @media only screen and (max-width: 1000px) {
+    .entry.wrapper {
+      margin: 5vh 5vw;
+    }
   }
-  .entry.formwrapper.row {
-    padding: 5px 0;
-    flex-direction: row;
-  }
-  .entry.font.label {
-    width: 125px;
+  @media only screen and (max-width: 750px) {
+    .entry.font.title {
+      padding-left: 25px;
+    }
+    .entry.font.notice {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+    .entry.font.button {
+      margin-left: 25px;
+    }
+    .entry.font.description {
+      margin-left: 25px;
+      margin-right: 25px;
+    }
+    .entry.font.text {
+      margin-left: 25px;
+      margin-right: 25px;
+    }
   }
 </style>

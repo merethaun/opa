@@ -9,7 +9,7 @@
         <img
           class="entry image"
           v-for="img in imgs"
-          :key="img.caption"
+          :key="id + '__' + img.caption"
           :src="img.path"
         >
       </div>

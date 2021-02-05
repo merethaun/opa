@@ -44,4 +44,13 @@ export default {
     margin: 0;
     color: var(--yellow);
   }
+
+  @media only screen and (max-width: 750px) {
+    .header.title {
+      font-size: large;
+    }
+    .header.subtitle {
+      font-size: medium;
+    }
+  }
 </style>
