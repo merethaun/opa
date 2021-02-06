@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-var store = new Vuex.Store({
+var store_mock = new Vuex.Store({
   getters: {
     all_displayed_entries () {
       let pic01 = {
@@ -31,5 +31,7 @@ var store = new Vuex.Store({
     }
   }
 })
+
+var stock = store_mock;
 
 export default store
