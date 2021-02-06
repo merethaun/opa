@@ -17,6 +17,7 @@
       <div class="entry formwrapper imagerow">
         <label class="entry font imagelabel">{{ imgs_label }}</label>
         <UploadAndDisplayImage
+          ref="get_images"
           :data-images="images"
           @upload-succes="imgs_upload_success"
           @edit-image="imgs_edit_image"
@@ -62,7 +63,7 @@ export default {
   methods: {
     save: function () {
       // TODO send author, text, img
-      console.log(this.text)
+      this.images = this.$refs.get_images.images
       window.location.href = '/#/'
     },
     cancel: function () {
@@ -72,9 +73,11 @@ export default {
       this.images_changed = true
     },
     imgs_edit_image: function (formData, index, fileList) {
+      console.log(fileList)
       this.images_changed = true
     },
     imgs_before_remove: function (index, done, fileList) {
+      console.log(fileList)
       done()
       this.images_changed = false
     }
