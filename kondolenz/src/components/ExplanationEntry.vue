@@ -14,9 +14,9 @@
 export default {
   name: 'ExplanationEntry',
   data: () => ({
-    button_title: 'Kondulenz schreiben',
+    button_title: 'Kondolenz schreiben',
     description: 'Mit 79 Jahren ist Peter Spinola am 25. Januar 2021 verstorben.\nWir, die einen großen oder kleinen Teil seines Lebens mit ihm teilen durften, müssen nun Abschied nehmen. Wir trauern und erinnern uns an gemeinsame Zeiten mit Peter Spinola und kondolieren auf den folgenden Seiten.',
-    notice: 'Wenn eine gesendete Kondulenz bearbeitet werden soll, sende bitte eine Email, die dein Problem beschreibt, an ...'
+    notice: 'Wenn eine gesendete Kondolenz bearbeitet werden soll, sende bitte eine Email, die dein Problem beschreibt, an ...'
   }),
   methods: {
     redirect_to_new_entry: function () {

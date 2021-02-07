@@ -150,8 +150,12 @@ export default {
     }
   }
   @media only screen and (max-width: 750px) {
+    .entry.entry.font {
+      font-size: small;
+    }
     .entry.font.title {
       padding-left: 25px;
+      font-size: smaller;
     }
     .entry.font.notice {
       padding-left: 25px;
@@ -167,6 +171,12 @@ export default {
     .entry.font.text {
       margin-left: 25px;
       margin-right: 25px;
+    }
+    .entry.font.notice {
+      font-size: x-small;
+    }
+    .entry.imagewrapper {
+      height: 200px;
     }
   }
 </style>
