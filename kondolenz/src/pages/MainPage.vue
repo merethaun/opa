@@ -36,6 +36,10 @@ export default {
       }
     }
   },
+  async mounted () {
+    console.log('MOUNTED')
+    this.$store.dispatch('query')
+  },
   computed: {
     entries: function () {
       // entry: title, author, text, photos (email)

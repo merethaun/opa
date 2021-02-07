@@ -61,9 +61,23 @@ export default {
     }
   },
   methods: {
-    save: function () {
+    save: async function () {
       // TODO send author, text, img
-      this.images = this.$refs.get_images.images
+      var data = {
+        title: this.title,
+        author: this.author,
+        email: this.email,
+        text: this.text,
+        images: []}
+      var images = this.$refs.get_images.images
+      console.info(images)
+      if (images !== undefined) {
+        images.forEach(element => {
+          data.images.push(element.path)
+        })
+      }
+      await this.$store.dispatch('save', data)
+
       window.location.href = '/#/'
     },
     cancel: function () {
