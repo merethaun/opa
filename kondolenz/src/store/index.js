@@ -93,6 +93,6 @@ var storeBackEnd = new Vuex.Store({
   }
 })
 
-var store = _storeMock
+var store = storeBackEnd
 
 export default store
