@@ -19,6 +19,7 @@ export default {
     font-family: Verdana;
     font-weight: 100;
     font-size: large;
+    word-break: normal;
   }
   .mainwrapper::before {
     content: "";
@@ -28,7 +29,7 @@ export default {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.1;
+    opacity: 0.08;
   }
   .mainwrapper {
     background: var(--grey);
@@ -62,13 +63,15 @@ export default {
   }
   .entry.font.title {
     font-size: large;
-    margin: 5px 0;
+    margin: 0;
+    margin-left: -55px;
     padding: 7px 25px 7px 55px;
     width: fit-content;
     min-width: fit-content;
     background: var(--dark-grey);
     color: var(--yellow);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    margin-right: 10px;
     /* TODO?? border-right: var(--yellow) thick solid;*/
   }
   .entry.font.text {
@@ -77,13 +80,15 @@ export default {
   }
   .entry.font.author {
     font-size: smaller;
-    padding: 0 0 0 20px;
+    padding: 5px 0;
+    margin-right: 10px;
     width: fit-content;
     min-width: fit-content;
   }
   .entry.font.date {
     font-size: small;
-    padding: 0 0 0 10px;
+    padding: 5px 0;
+    width: fit-content;
   }
   .entry.font.button {
     padding: 7px 10px;
@@ -149,6 +154,8 @@ export default {
   .entry.titlewrapper {
     display: flex;
     align-items: baseline;
+    flex-wrap: wrap;
+    padding-left: 55px;
   }
 
   @media only screen and (max-width: 1000px) {
@@ -157,12 +164,16 @@ export default {
     }
   }
   @media only screen and (max-width: 750px) {
+    .entry.entry.titlewrapper {
+      padding-left: 25px;
+    }
     .entry.entry.font {
       font-size: small;
     }
     .entry.font.title {
       padding-left: 25px;
       font-size: smaller;
+      margin-left: -25px;
     }
     .entry.font.notice {
       padding-left: 25px;

@@ -123,8 +123,7 @@ export default {
       default:
         monthString = 'Dezember'
     }
-    
-    this.parsedDate = dayNumber + '. ' + monthString + ' ' + yearNumber
+    this.parsedDate = '- ' + dayNumber + '. ' + monthString + ' ' + yearNumber
   }
 }
 </script>
