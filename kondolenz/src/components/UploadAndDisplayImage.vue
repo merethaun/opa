@@ -277,11 +277,6 @@ export default {
 </script>
 
 <style>
-  .uploadimagewrapper {
-    margin-left: -55px;
-    margin-right: -75px;
-  }
-
   .inputimage {
     position: relative;
     display: flex;

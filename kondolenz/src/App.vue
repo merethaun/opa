@@ -56,7 +56,7 @@ export default {
     margin: 0;
     font-weight: 100;
     font-size: medium;
-    width: fit-content;
+    width: fill-available;
     text-align: justify;
     word-wrap: normal;
   }
@@ -65,6 +65,7 @@ export default {
     margin: 5px 0;
     padding: 7px 25px 7px 55px;
     width: fit-content;
+    min-width: fit-content;
     background: var(--dark-grey);
     color: var(--yellow);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);

@@ -113,7 +113,7 @@ export default {
   }
   .entry.font.imagelabel {
     width: 100%;
-    padding-bottom: 10px;
+    padding-top: 10px;
   }
   .entry.font.input {
     padding: 5px;
@@ -124,7 +124,6 @@ export default {
   .entry.font.input.multiline {
     width: fill-available;
     max-width: fill-available;
-    min-width: fill-available;
     height: 100px;
     font-family: inherit;
     font-weight: inherit;
@@ -145,6 +144,16 @@ export default {
   }
   .entry.font.input.multiline::-webkit-scrollbar-thumb:active {
     background: rgb(110, 110, 110);
+  }
+  .uploadimagewrapper {
+    margin-left: -55px!important;
+    margin-right: -75px!important;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .entry.font.input {
+      width: fill-available;
+    }
   }
 
   @media only screen and (max-width: 750px) {

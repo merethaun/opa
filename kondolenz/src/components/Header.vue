@@ -53,8 +53,10 @@ export default {
       font-size: large;
     }
     .header.subtitle {
-      font-size: medium;
+      font-size: smaller;
+      padding: 0;
       padding-right: 5vw;
+      margin: 0;
     }
   }
 </style>
