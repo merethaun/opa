@@ -1,7 +1,11 @@
 <template>
   <div class="entry wrapper">
-    <h1 class="entry font title">{{title}}</h1>
+    <h1 class="entry font title">{{ description_title }}</h1>
     <div class="entry formwrapper">
+      <div class="entry formwrapper row">
+        <label class="entry font label">{{ title_label }}</label>
+        <input type="text" class="entry font input" v-model="title">
+      </div>
       <div class="entry formwrapper row">
         <label class="entry font label">{{ author_label }}</label>
         <input type="text" class="entry font input" v-model="author">
@@ -45,13 +49,15 @@ export default {
   },
   data: function () {
     return {
-      title: 'Kondolenz schreiben',
+      title: '',
       author: '',
       email: '',
       text: '',
       images: [],
+      description_title: 'Kondolenz schreiben',
       button_send: 'Kondolenz absenden',
       button_cancel: 'Abbrechen',
+      title_label: 'Title',
       author_label: 'Name',
       text_label: 'Kondolenznachricht verfassen',
       email_label: 'Kontaktmöglichkeit',
@@ -121,7 +127,7 @@ export default {
   }
   .entry.font.imagelabel {
     width: 100%;
-    padding-bottom: 10px;
+    padding-top: 10px;
   }
   .entry.font.input {
     padding: 5px;
@@ -130,7 +136,8 @@ export default {
     font-size: medium;
   }
   .entry.font.input.multiline {
-    width: 100%;
+    width: fill-available;
+    max-width: fill-available;
     height: 100px;
     font-family: inherit;
     font-weight: inherit;
@@ -152,8 +159,25 @@ export default {
   .entry.font.input.multiline::-webkit-scrollbar-thumb:active {
     background: rgb(110, 110, 110);
   }
+  .uploadimagewrapper {
+    margin-left: -55px!important;
+    margin-right: -75px!important;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .entry.font.input {
+      width: fill-available;
+    }
+  }
 
   @media only screen and (max-width: 750px) {
+    .uploadimagewrapper {
+      margin-left: -25px!important;
+      margin-right: -25px!important;
+    }
+    .inputimage {
+      min-width: 200px!important;
+    }
     .entry.formwrapper {
       padding-left: 25px;
       padding-right: 25px;
@@ -173,8 +197,16 @@ export default {
     }
     .entry.font.label {
       font-size: small;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
       margin-top: 3px;
+      width: fill-available;
+    }
+    .entry.font.imagelabel {
+      font-size: small;
+      margin-top: 3px;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      width: fill-available;
     }
   }
 </style>

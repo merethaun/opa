@@ -46,11 +46,17 @@ export default {
   }
 
   @media only screen and (max-width: 750px) {
+    .header.wrapper {
+      justify-content: space-between;
+    }
     .header.title {
       font-size: large;
     }
     .header.subtitle {
-      font-size: medium;
+      font-size: smaller;
+      padding: 0;
+      padding-right: 5vw;
+      margin: 0;
     }
   }
 </style>

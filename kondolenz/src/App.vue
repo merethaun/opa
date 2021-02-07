@@ -56,7 +56,7 @@ export default {
     margin: 0;
     font-weight: 100;
     font-size: medium;
-    width: fit-content;
+    width: fill-available;
     text-align: justify;
     word-wrap: normal;
   }
@@ -65,6 +65,7 @@ export default {
     margin: 5px 0;
     padding: 7px 25px 7px 55px;
     width: fit-content;
+    min-width: fit-content;
     background: var(--dark-grey);
     color: var(--yellow);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
@@ -150,8 +151,12 @@ export default {
     }
   }
   @media only screen and (max-width: 750px) {
+    .entry.entry.font {
+      font-size: small;
+    }
     .entry.font.title {
       padding-left: 25px;
+      font-size: smaller;
     }
     .entry.font.notice {
       padding-left: 25px;
@@ -167,6 +172,12 @@ export default {
     .entry.font.text {
       margin-left: 25px;
       margin-right: 25px;
+    }
+    .entry.font.notice {
+      font-size: x-small;
+    }
+    .entry.imagewrapper {
+      height: 200px;
     }
   }
 </style>
