@@ -12,6 +12,7 @@
         :author="entry.author"
         :id="entry.id"
         :imgs="entry.imgs"
+        :date="entry.created_at"
       />
     </div>
   </div>

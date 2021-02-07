@@ -76,8 +76,14 @@ export default {
     margin-right: 75px;
   }
   .entry.font.author {
-    font-size: small;
+    font-size: smaller;
     padding: 0 0 0 20px;
+    width: fit-content;
+    min-width: fit-content;
+  }
+  .entry.font.date {
+    font-size: small;
+    padding: 0 0 0 10px;
   }
   .entry.font.button {
     padding: 7px 10px;

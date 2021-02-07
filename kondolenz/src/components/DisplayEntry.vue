@@ -3,6 +3,7 @@
     <div class="entry titlewrapper">
       <h1 class="entry font title">{{ title }}</h1>
       <h1 class="entry font author">{{ author }}</h1>
+      <h1 class="entry font date">{{ parsedDate }}</h1>
     </div>
     <div class="entry imagewrapper" v-if="(imgs)">
       <div>
@@ -39,13 +40,15 @@ export default {
     title: String,
     author: String,
     id: String,
-    imgs: Array
+    imgs: Array,
+    date: String
   },
   data () {
     return {
       currentIndexImage: 0,
       showLightbox: false,
-      arrLightBox: []
+      arrLightBox: [],
+      parsedDate: ''
     }
   },
   components: {
@@ -75,6 +78,53 @@ export default {
         this.showLightbox = false
       }
     }
+  },
+  mounted () {
+    let dateArray = this.date.split(' ')[0].split('-')
+    var yearNumber = dateArray[0]
+    var monthNumber = dateArray[1]
+    var dayNumber = dateArray[2]
+
+    var monthString
+    switch (monthNumber) {
+      case '01':
+        monthString = 'Januar'
+        break
+      case '02':
+        monthString = 'Februar'
+        break
+      case '03':
+        monthString = 'März'
+        break
+      case '04':
+        monthString = 'April'
+        break
+      case '05':
+        monthString = 'Mai'
+        break
+      case '06':
+        monthString = 'Juni'
+        break
+      case '07':
+        monthString = 'Juli'
+        break
+      case '08':
+        monthString = 'August'
+        break
+      case '09':
+        monthString = 'September'
+        break
+      case '10':
+        monthString = 'Oktober'
+        break
+      case '11':
+        monthString = 'November'
+        break
+      default:
+        monthString = 'Dezember'
+    }
+    
+    this.parsedDate = dayNumber + '. ' + monthString + ' ' + yearNumber
   }
 }
 </script>
