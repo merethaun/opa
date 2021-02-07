@@ -12,7 +12,7 @@ $uniqId = time().'_'. sprintf('%010u', rand() );
 $img_id = 0;
 foreach ($data->images as $img) {
     if (preg_match('/^data:image\/(\w+);base64,/', $img, $type)) {
-        $img = substr($data, strpos($img, ',') + 1);
+        $img = substr($img, strpos($img, ',') + 1);
         $type = strtolower($type[1]); // jpg
     
         if (!in_array($type, [ 'jpg', 'jpeg'])) {
