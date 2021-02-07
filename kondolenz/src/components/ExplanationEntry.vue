@@ -42,7 +42,7 @@ export default {
     max-height: 100%;
     height: auto;
     width: auto;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
     padding: 0;
     margin-right: 25px;
     margin-bottom: 10px;

@@ -1,6 +1,8 @@
 <template>
   <div class="entry wrapper">
-    <h1 class="entry font title">{{ description_title }}</h1>
+    <div class="entry titlewrapper">
+      <h1 class="entry font title">{{ description_title }}</h1>
+    </div>
     <div class="entry formwrapper">
       <div class="entry formwrapper row">
         <label class="entry font label">{{ title_label }}</label>
@@ -57,18 +59,22 @@ export default {
       description_title: 'Kondolenz schreiben',
       button_send: 'Kondolenz absenden',
       button_cancel: 'Abbrechen',
-      title_label: 'Title',
+      title_label: 'Überschrift',
       author_label: 'Name',
       text_label: 'Kondolenznachricht verfassen',
       email_label: 'Kontaktmöglichkeit',
       imgs_label: 'Zusätzlich Bilder hochladen',
-      notice: '⚠ Dieses Online-Kondolenzbuch ist ein privates Projekt zu Ehren von Peter Spinola. Mit dem Absenden bestätigen Sie, dass Ihr Name, Kondolenznachricht und hochgeladene Bilder veröffentlicht werden dürfen.\nIhre Kontaktdaten werden nicht veröffentlicht und nur für den Fall von Rückfragen zu Ihrer Kondolenz verwendet. Ihre Kontakdaten werden anschließend gelöscht.\nDie Angaben von Namen und Kontaktmöglichkeit sind freiwillig. Das Hochladen von Bildern ist ebenfalls freiwillig.\nEs besteht kein Anspruch auf die Veröffentlichung Ihrer Nachricht.',
+      notice: '⚠ Dieses Online-Kondolenzbuch ist ein privates Projekt zu Ehren von Peter Spinola. Mit dem Absenden bestätigen Sie, dass Ihr Name, Kondolenznachricht und hochgeladene Bilder veröffentlicht werden dürfen.\nIhre Kontaktdaten werden nicht veröffentlicht und nur für den Fall von Rückfragen zu Ihrer Kondolenz verwendet. Ihre Kontakdaten werden anschließend gelöscht.\nDie Angaben von Namen und das Hochladen von Bildern sind freiwillig.\nEs besteht kein Anspruch auf die Veröffentlichung Ihrer Nachricht.',
       images_changed: false
     }
   },
   methods: {
     save: async function () {
       // TODO send author, text, img
+      if ((this.author === '') || (this.text === '')) {
+        window.alert('Gib bitte einen Kondolenztext sowie einen Namen und eine Kontaktmöglichkeit ein.')
+        return
+      }
       var data = {
         title: this.title,
         author: this.author,
