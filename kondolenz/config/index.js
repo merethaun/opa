@@ -4,14 +4,55 @@
 
 const path = require('path')
 
+var serve_path = 'http://192.168.178.34/'
+
 module.exports = {
   dev: {
 
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
-
+    proxyTable: {
+      "/query.php": {
+        "changeOrigin": true,
+        "cookieDomainRewrite": "localhost",
+        "target": serve_path,
+        onProxyReq: proxyReq => {
+          // Browers may send Origin headers even with same-origin
+          // requests. To prevent CORS issues, we have to change
+          // the Origin to match the target URL.
+          if (proxyReq.getHeader('origin')) {
+            proxyReq.setHeader('origin', serve_path);
+          }
+        }
+      },
+      "/images": {
+        "changeOrigin": true,
+        "cookieDomainRewrite": "localhost",
+        "target": serve_path,
+        onProxyReq: proxyReq => {
+          // Browers may send Origin headers even with same-origin
+          // requests. To prevent CORS issues, we have to change
+          // the Origin to match the target URL.
+          if (proxyReq.getHeader('origin')) {
+            proxyReq.setHeader('origin', serve_path);
+          }
+        }
+      },
+      "/save.php": {
+        "changeOrigin": true,
+        "cookieDomainRewrite": "localhost",
+        "target": serve_path,
+        onProxyReq: proxyReq => {
+          // Browers may send Origin headers even with same-origin
+          // requests. To prevent CORS issues, we have to change
+          // the Origin to match the target URL.
+          if (proxyReq.getHeader('origin')) {
+            proxyReq.setHeader('origin', serve_path);
+          }
+        }
+      },
+    },
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined

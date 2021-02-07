@@ -45,3 +45,29 @@ All docker container are created and started. To checkk you can call
         server_nginx_1        nginx -g daemon off;             Up      0.0.0.0:80->80/tcp  
         server_php_1          docker-php-entrypoint php-fpm    Up      9000/tcp            
         server_phpmyadmin_1   /docker-entrypoint.sh apac ...   Up      0.0.0.0:8080->80/tcp
+
+## MySQL
+
+### Table creation 
+
+Using phpmyadmin
+
+``` sql
+CREATE TABLE `entries` (
+  `id` varchar(21) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `author` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `text` varchar(4095) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `num_imgs` int UNSIGNED,
+  `client` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+```
+
+Create test entry
+
+``` sql
+INSERT INTO `entries`(`id`, `title`, `author`, `email`, `text`, `created_at`, `num_imgs`, `client`) VALUES ('test_id', 'test_title', 'test_author', 'test_email', 'test text', now(), 2, ' test client')
+
+```

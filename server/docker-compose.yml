@@ -9,16 +9,16 @@ services:
         ports:
           - 80:80
         volumes:
-          - ./src:/var/www/php:ro
+          - ./src:/var/www/app:ro
           - ./.docker/nginx/conf.d:/etc/nginx/conf.d:ro
         depends_on:
           - php
     # PHP Service
     php:
-        build: ./.docker/php
-        working_dir: /var/www/php
+        build: ./.docker/php_mysqli
+        working_dir: /var/www/app
         volumes:
-          - ./src:/var/www/php
+          - ./src:/var/www/app
         depends_on:
           - mysql
 
