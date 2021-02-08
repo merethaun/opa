@@ -33,7 +33,7 @@ export default {
   data () {
     return {
       images: {
-        main: require('@/assets/IMG_20170722_135316.jpg')
+        main: require('@/assets/Spinolas.jpg')
       }
     }
   },
