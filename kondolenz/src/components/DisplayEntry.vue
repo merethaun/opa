@@ -2,10 +2,12 @@
   <div class="entry wrapper">
     <div class="entry titlewrapper">
       <h1 class="entry font title">{{ title }}</h1>
-      <h1 class="entry font author">{{ author }}</h1>
-      <h1 class="entry font date">{{ parsedDate }}</h1>
+      <div style="display: flex; align-items: center;">
+        <h1 class="entry font author">{{ author }}</h1>
+        <h1 class="entry font date">{{ parsedDate }}</h1>
+      </div>
     </div>
-    <div class="entry imagewrapper" v-if="(imgs)">
+    <div class="entry imagewrapper" v-if="(imgs) && (imgs.length > 0)">
       <div>
         <img
           class="entry image"

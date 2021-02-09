@@ -19,7 +19,7 @@ export default {
     font-family: Verdana;
     font-weight: 100;
     font-size: large;
-    word-break: normal;
+    word-break: break-word;
   }
   .mainwrapper::before {
     content: "";
@@ -88,6 +88,7 @@ export default {
   .entry.font.date {
     font-size: small;
     padding: 5px 0;
+    padding-right: 75px;
     width: fit-content;
   }
   .entry.font.button {
@@ -150,12 +151,19 @@ export default {
   .entry.image {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     margin: 0 5px;
+    height: 220px;
+    width: auto;
+    cursor: pointer;
   }
   .entry.titlewrapper {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
     padding-left: 55px;
+  }
+
+  .swiper-container {
+    
   }
 
   @media only screen and (max-width: 1000px) {
@@ -195,6 +203,9 @@ export default {
     }
     .entry.imagewrapper {
       height: 200px;
+    }
+    .entry.font.date {
+      padding-right: 25px;
     }
   }
 </style>
