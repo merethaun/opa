@@ -14,6 +14,9 @@ export default {
   components: {
     Header,
     NewEntry
+  },
+  mounted () {
+    window.scrollTo(0, 0)
   }
 }
 </script>

@@ -2,7 +2,9 @@
   <div class="mainwrapper">
     <Header />
     <div class="entrieswrapper">
-      <img class="mainimage" :src="images.main">
+      <div class="entry wrapper" style="padding: 0;">
+        <img class="mainimage" :src="images.main">
+      </div>
       <ExplanationEntry />
       <DisplayEntry
         v-for="entry in entries"
@@ -38,6 +40,7 @@ export default {
     }
   },
   async mounted () {
+    window.scrollTo(0, 0)
     console.log('MOUNTED')
     this.$store.dispatch('query')
   },

@@ -20,7 +20,7 @@ export default {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.03;
+    opacity: 0.05;
   }
   .header.wrapper {
     background-color: var(--dark-grey);
@@ -32,8 +32,9 @@ export default {
     flex-direction: row;
     align-items: center;
     z-index: 1;
-    padding: 10px 2vw 20px;
+    padding: 0 2vw;
     box-shadow: 0 -10px 10px 10px black;
+    height: 10vh;
   }
   .header.title {
     font-weight: 500;

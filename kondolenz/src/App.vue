@@ -29,7 +29,16 @@ export default {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.08;
+    opacity: 0.1;
+  }
+  .modal-mask {
+    background-color: rgba(0, 0, 0, 0.8)!important;
+  }
+  .swiper-container {
+    background-color: transparent!important;
+  }
+  img.vue-lightbox-modal-image {
+    border: white solid thin;
   }
   .mainwrapper {
     background: var(--grey);
@@ -160,10 +169,6 @@ export default {
     align-items: baseline;
     flex-wrap: wrap;
     padding-left: 55px;
-  }
-
-  .swiper-container {
-    
   }
 
   @media only screen and (max-width: 1000px) {
