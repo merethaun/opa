@@ -5,20 +5,36 @@
     </div>
     <div class="entry formwrapper">
       <div class="entry formwrapper row">
-        <label class="entry font label">{{ title_label }}</label>
-        <input type="text" class="entry font input" v-model="title">
+        <div class="entry font labelwrapper">
+          <label class="entry font label">{{ title_label }}</label>
+          <br>
+          <label class="entry font label advice">maximal 255 Zeichen</label>
+        </div>
+        <input type="text" class="entry font input" v-model="title" maxlength="255">
       </div>
       <div class="entry formwrapper row">
-        <label class="entry font label">{{ author_label }}</label>
-        <input type="text" class="entry font input" v-model="author">
+        <div class="entry font labelwrapper">
+          <label class="entry font label">{{ author_label }}</label>
+          <br>
+          <label class="entry font label advice">maximal 255 Zeichen</label>
+        </div>
+        <input type="text" class="entry font input" v-model="author" maxlength="255">
       </div>
       <div class="entry formwrapper row">
-        <label class="entry font label">{{ email_label }}</label>
-        <input type="text" class="entry font input" v-model="email">
+        <div class="entry font labelwrapper">
+          <label class="entry font label">{{ email_label }}</label>
+          <br>
+          <label class="entry font label advice">maximal 255 Zeichen</label>
+        </div>
+        <input type="text" class="entry font input" v-model="email" maxlength="255">
       </div>
       <div class="entry formwrapper row">
-        <label class="entry font label">{{ text_label }}</label>
-        <textarea type="text" class="entry font input multiline" v-model="text"></textarea>
+        <div class="entry font labelwrapper">
+          <label class="entry font label">{{ text_label }}</label>
+          <br>
+          <label class="entry font label advice">maximal 4096 Zeichen</label>
+        </div>
+        <textarea type="text" class="entry font input multiline" v-model="text" maxlength="4096"></textarea>
       </div>
       <div class="entry formwrapper imagerow">
         <label class="entry font imagelabel">{{ imgs_label }}</label>
@@ -64,15 +80,15 @@ export default {
       text_label: 'Kondolenznachricht verfassen',
       email_label: 'Kontaktmöglichkeit',
       imgs_label: 'Zusätzlich Bilder hochladen',
-      notice: '⚠ Dieses Online-Kondolenzbuch ist ein privates Projekt zu Ehren von Peter Spinola. Mit dem Absenden bestätigen Sie, dass Ihr Name, Kondolenznachricht und hochgeladene Bilder veröffentlicht werden dürfen.\nIhre Kontaktdaten werden nicht veröffentlicht und nur für den Fall von Rückfragen zu Ihrer Kondolenz verwendet. Ihre Kontakdaten werden anschließend gelöscht.\nDie Angaben von Namen und das Hochladen von Bildern sind freiwillig.\nEs besteht kein Anspruch auf die Veröffentlichung Ihrer Nachricht.',
+      notice: '⚠ Dieses digitale Kondolenzbuch ist ein privates Projekt zu Ehren von Peter Spinola. Mit dem Absenden bestätigen Sie, dass Ihre angegebenen Daten veröffentlicht werden dürfen.\nIhre Kontaktdaten werden nicht veröffentlicht, nur für den Fall von Rückfragen zu Ihrer Kondolenz verwendet und werden anschließend gelöscht.\nEs besteht kein Anspruch auf die Veröffentlichung Ihrer Nachricht.',
       images_changed: false
     }
   },
   methods: {
     save: async function () {
       // TODO send author, text, img
-      if ((this.author === '') || (this.text === '')) {
-        window.alert('Gib bitte einen Kondolenztext sowie einen Namen und eine Kontaktmöglichkeit ein.')
+      if ((this.author === '') && (this.text === '') && (this.images.length === 0)) {
+        window.alert('Gib bitte deinen Name, eine Kodolenznachricht oder Bilder ein.')
         return
       }
       var data = {
@@ -126,10 +142,16 @@ export default {
     flex-direction: column;
     padding-bottom: 10px;
   }
-  .entry.font.label {
+  .entry.font.labelwrapper {
     width: 175px;
     min-width: 175px;
+  }
+  .entry.font.label {
     text-align: left;
+  }
+  .entry.font.label.advice {
+    font-size: x-small;
+    color: var(--grey)
   }
   .entry.font.imagelabel {
     width: 100%;
