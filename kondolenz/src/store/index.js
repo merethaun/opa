@@ -65,7 +65,7 @@ var storeBackEnd = new Vuex.Store({
           data['imgs'] = []
           for (var i = 0; i < data['num_imgs']; i++) {
             var idx = '00' + i
-            idx = idx.substr(0, 2)
+            idx = idx.substr(idx.length - 2)
             let pic = {
               path: 'images/' + data['id'] + '_' + idx + '.jpg',
               caption: i.toString()
@@ -89,10 +89,11 @@ var storeBackEnd = new Vuex.Store({
       console.info(data)
       var r = await axios.post(urlSave, data)
       console.info('Save status ' + r.status)
+      return r.status === 200
     }
   }
 })
 
-var store = _storeMock
+var store = storeBackEnd
 
 export default store

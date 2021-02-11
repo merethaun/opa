@@ -19,6 +19,8 @@ foreach ($data->images as $img) {
             throw new \Exception('invalid image type: '. $type);
         }
         $img = str_replace( ' ', '+', $img );
+        print($img);
+        print("-------------------");
         $img = base64_decode($img);
     
         if ($img === false) {
