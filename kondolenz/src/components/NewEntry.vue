@@ -34,10 +34,13 @@
           <br>
           <label class="entry font label advice">maximal 4096 Zeichen</label>
         </div>
-        <textarea type="text" class="entry font input multiline" v-model="text" maxlength="4096"></textarea>
+        <textarea type="text" class="entry font input multiline" v-model="text" maxlength="4096" spellcheck="true"></textarea>
       </div>
       <div class="entry formwrapper imagerow">
-        <label class="entry font imagelabel">{{ imgs_label }}</label>
+        <div class="entry font imagelabelwrapper">
+          <label class="entry font imagelabel">{{ imgs_label }}</label>
+          <label class="entry font label advice">maximal 5 Bilder</label>
+        </div>
         <UploadAndDisplayImage
           ref="get_images"
           :data-images="images"
@@ -122,9 +125,12 @@ export default {
           data.images.push(element.path)
         })
       }
-      await this.$store.dispatch('save', data)
-
-      window.location.href = '/#/'
+      var success = await this.$store.dispatch('save', data)
+      if (success) {
+        window.location.href = '/#/'
+      } else {
+        window.alert('Es gab Probleme beim Hochladen deiner Kondolenz. Versuche, weniger Bilder hochzuladen oder sie auf mehrere Einträge zu verteilen.\nVielen Dank für dein Verständnis.')
+      }
     },
     cancel: function () {
       window.location.href = '/#/'
@@ -163,6 +169,9 @@ export default {
   .entry.font.labelwrapper {
     width: 175px;
     min-width: 175px;
+  }
+  .entry.font.imagelabelwrapper {
+    width: fill-available;
   }
   .entry.font.label {
     text-align: left;
