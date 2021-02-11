@@ -46,6 +46,14 @@
           @before-remove="imgs_before_remove"
         />
       </div>
+      <div class="entry formwrapper row">
+        <div class="entry font labelwrapper">
+          <label class="entry font label">{{ password_label }}</label>
+          <br>
+          <label class="entry font label advice">Das Passwort findest du auf der Trauerkarte</label>
+        </div>
+        <input type="text" class="entry font input" v-model="entered_password" maxlength="255">
+      </div>
     </div>
     <div>
       <button class="entry font button" @click="save">{{ button_send }}</button>
@@ -72,6 +80,8 @@ export default {
       email: '',
       text: '',
       images: [],
+      entered_password: '',
+      password_label: 'Passwort eingeben',
       description_title: 'Kondolenz schreiben',
       button_send: 'Kondolenz absenden',
       button_cancel: 'Abbrechen',
@@ -80,7 +90,7 @@ export default {
       text_label: 'Kondolenznachricht verfassen',
       email_label: 'Kontaktmöglichkeit',
       imgs_label: 'Zusätzlich Bilder hochladen',
-      notice: '⚠ Dieses digitale Kondolenzbuch ist ein privates Projekt zu Ehren von Peter Spinola. Mit dem Absenden bestätigen Sie, dass Ihre angegebenen Daten veröffentlicht werden dürfen.\nIhre Kontaktdaten werden nicht veröffentlicht, nur für den Fall von Rückfragen zu Ihrer Kondolenz verwendet und werden anschließend gelöscht.\nEs besteht kein Anspruch auf die Veröffentlichung Ihrer Nachricht.',
+      notice: '⚠ Dieses digitale Kondolenzbuch ist ein privates Projekt zu Ehren von Peter Spinola. Mit dem Absenden wird bestätigt, dass die eingegebenen Daten auf dieser Seite veröffentlicht werden dürfen. Ausgenommen sind die Kontaktdaten, die nur für den Fall von Rückfragen zur Kondolenz verwendet und nach der Prüfung gelöscht werden.\nEs besteht kein Anspruch auf die Veröffentlichung der Nachricht.\nAus allen Wort- und Bildmeldungen wird ein Kondolenz-Fotobuch für Gudrun erstellt.\nDas Projekt ist ein Werk von Meret, Jörg, Peter und Iris Unbehaun.',
       images_changed: false
     }
   },
@@ -91,6 +101,14 @@ export default {
         window.alert('Gib bitte deinen Name, eine Kodolenznachricht oder Bilder ein.')
         return
       }
+
+      var passwordHash = require('password-hash')
+      var hashedPassword = 'sha1$41a7485c$1$76466d75e79d01714a08103ceba20313a3f9e688'
+      if (!passwordHash.verify(this.entered_password, hashedPassword)) {
+        window.alert('Dein eingegebenes Passwort ist nicht korrekt.')
+        return
+      }
+
       var data = {
         title: this.title,
         author: this.author,
@@ -151,7 +169,7 @@ export default {
   }
   .entry.font.label.advice {
     font-size: x-small;
-    color: var(--grey)
+    color: var(--grey);
   }
   .entry.font.imagelabel {
     width: 100%;
@@ -162,6 +180,7 @@ export default {
     outline: none;
     width: 350px;
     font-size: medium;
+    margin-left: 10px;
   }
   .entry.font.input.multiline {
     width: fill-available;
