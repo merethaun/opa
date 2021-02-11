@@ -1,5 +1,5 @@
 <template>
-  <div class="header wrapper" style="background-image: " @click="goToTop">
+  <div class="header wrapper" style="background-image: " @click="goToTop" title="Gehe zum Seitenanfang">
     <h1 class="header title">Peter Spinola</h1>
     <h1 class="header subtitle">Kondolenzbuch</h1>
   </div>

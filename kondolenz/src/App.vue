@@ -24,6 +24,9 @@ export default {
   html {
     scroll-behavior: smooth;
   }
+  a {
+    color: var(--yellow)!important;
+  }
   .mainwrapper::before {
     content: "";
     background-image: url('~@/assets/paper_texture.jpg');

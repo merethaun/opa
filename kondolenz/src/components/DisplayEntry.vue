@@ -1,7 +1,7 @@
 <template>
   <div class="entry wrapper">
     <div class="entry titlewrapper">
-      <h1 class="entry font title">{{ title }}</h1>
+      <h1 class="entry font title" v-if="(title) && (title !== '')">{{ title }}</h1>
       <div style="display: flex; align-items: center;">
         <h1 class="entry font author">{{ author }}</h1>
         <h1 class="entry font date">{{ parsedDate }}</h1>
