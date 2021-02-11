@@ -1,5 +1,5 @@
 <template>
-  <div class="header wrapper" style="background-image: ">
+  <div class="header wrapper" style="background-image: " @click="goToTop">
     <h1 class="header title">Peter Spinola</h1>
     <h1 class="header subtitle">Kondolenzbuch</h1>
   </div>
@@ -7,7 +7,12 @@
 
 <script>
 export default {
-  name: 'Header'
+  name: 'Header',
+  methods: {
+    goToTop () {
+      window.scrollTo(0, 0)
+    }
+  }
 }
 </script>
 

@@ -91,7 +91,7 @@ export default {
       title_label: 'Überschrift',
       author_label: 'Name',
       text_label: 'Kondolenznachricht verfassen',
-      email_label: 'Kontaktmöglichkeit',
+      email_label: 'Email',
       imgs_label: 'Zusätzlich Bilder hochladen',
       notice: '⚠ Dieses digitale Kondolenzbuch ist ein privates Projekt zu Ehren von Peter Spinola. Mit dem Absenden wird bestätigt, dass die eingegebenen Daten auf dieser Seite veröffentlicht werden dürfen. Ausgenommen sind die Kontaktdaten, die nur für den Fall von Rückfragen zur Kondolenz verwendet und nach der Prüfung gelöscht werden.\nEs besteht kein Anspruch auf die Veröffentlichung der Nachricht.\nAus allen Wort- und Bildmeldungen wird ein Kondolenz-Fotobuch für Gudrun erstellt.\nDas Projekt ist ein Werk von Meret, Jörg, Peter und Iris Unbehaun.',
       images_changed: false

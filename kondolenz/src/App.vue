@@ -21,6 +21,9 @@ export default {
     font-size: large;
     word-break: break-word;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   .mainwrapper::before {
     content: "";
     background-image: url('~@/assets/paper_texture.jpg');
