@@ -59,12 +59,15 @@
       </div>
     </div>
     <div>
-      <button class="entry font button" @click="save">{{ button_send }}</button>
-      <button class="entry font button cancel" @click="cancel">{{ button_cancel }}</button>
+      <button class="entry font button" @click="save" :disabled='save_action'>{{ button_send }}</button>
+      <button class="entry font button cancel" @click="cancel" :disabled='save_action'>{{ button_cancel }}</button>
     </div>
     <h1 class="entry font noticewrapper">
       <h1 class="entry font notice" v-for="line in notice.split('\n')" :key="line">{{ line }}<br></h1>
     </h1>
+    <b-toast id="save-toast" class="toaster-top-center warning" title="Achtung" no-close-button no-auto-hide>
+      Nachricht wird gespeichert
+    </b-toast>
   </div>
 </template>
 
@@ -90,6 +93,7 @@ export default {
       button_cancel: 'Abbrechen',
       title_label: 'Überschrift',
       author_label: 'Name',
+      save_action: false,
       text_label: 'Kondolenznachricht verfassen',
       email_label: 'Email',
       imgs_label: 'Zusätzlich Bilder hochladen',
@@ -125,7 +129,12 @@ export default {
           data.images.push(element.path)
         })
       }
-      var success = await this.$store.dispatch('save', data)
+      var fut = this.$store.dispatch('save', data)
+      this.save_action = true
+      this.$bvToast.show('save-toast')
+      var success = await fut
+      this.save_action = false
+      this.$bvToast.hide('save-toast')
       if (success) {
         window.location.href = '/#/'
       } else {
@@ -152,6 +161,11 @@ export default {
 </script>
 
 <style>
+  button {
+    disabled{
+      cursor: not-allowed;
+    }
+  }
   .entry.formwrapper {
     padding: 5px 75px 5px 55px;
     display: flex;

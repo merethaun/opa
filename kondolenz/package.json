@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "bootstrap-vue": "^2.21.2",
     "password-hash": "^1.2.2",
     "vue": "^2.5.2",
     "vue-image-lightbox-carousel": "^1.0.7",
